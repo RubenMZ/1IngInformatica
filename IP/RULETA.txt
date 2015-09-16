@@ -1,0 +1,119 @@
+#include <stdio.h>
+
+int main(){
+
+    srand(time(NULL));
+
+    printf("\n\nVENGAN SEÑORAS Y SEÑORES\nVA A EMPEZAR LA RULETAAAA!!!!\n");
+
+    int menu,fichas,apuesta,numero,gasto,i,suerte,eleccion,ganas;
+
+    printf("Elija entre este menu: \n \t 1:Introducir fichas. \n \t 2:Jugar. \n \t 3:¿Cuantas fichas tengo?\n\t 4:Salir. \n  ");
+    scanf("%d", &menu);
+
+    while(menu!=4){
+
+        switch(menu){
+    
+            case 1: 
+    
+                printf("¿Cuantas fichas quieres meter?\n");
+                scanf("%d", &fichas);
+                break;
+    
+            case 2:
+        
+                if(fichas>=0){
+    
+                    printf("JUGAR!!! :D\n\t ¿A que numero quieres apostar?:\n");
+                    scanf("%d", &apuesta);
+
+                    if((apuesta>33)||(apuesta<0)){
+
+                        pritnf("No puedes apostar a ese numero\n\n");
+                        break;
+                    
+                    }        
+
+                    printf("¿Y cuanto quieres gastar?\n"); 
+                    scanf("%d",&gasto);
+                    
+                    if(gasto<=fichas){
+    
+                        fichas=fichas-gasto;
+                    
+                    }else{
+                    
+                        printf("No puedes apostar tanto\n\n");
+                        break;
+                    }
+    
+                    for(i=1; i<=33;i++){
+    
+                        printf(" %d ", i);
+                        if(i%3==0){
+                            printf("\n");
+                        }
+                    }
+                    printf("Y en la ruleta sale ..... \n\n");
+    
+                    suerte=rand()%33;
+                    printf("______________\n");
+                    printf("¡¡¡¡  %d  !!!!\n\n", suerte);
+                    printf("~~~~~~~~~~~~~~\n\n");
+    
+                    if(apuesta==suerte){
+    
+                        fichas=gasto*10+fichas;
+                        
+                        printf("ENHORABUENA, HAS DADO EN EL CLAVO! \nhas ganado %d y ahora tienes %d fichas\n\n", gasto*10,fichas);
+                    }
+                    if((apuesta%2==0)&&(suerte%2==0)){
+                
+                        fichas=gasto*2+fichas;
+                        printf("enhorabuena!, los dos son rojos!\nhas ganado %d y ahora tienes %d fichas\n\n", gasto*2,fichas);
+    
+                    }
+                    if((apuesta%2!=0)&&(suerte%2!=0)){
+                
+                        fichas=gasto*2+fichas;
+                        printf("enhorabuena!, los dos son negros!\n has ganado %d y ahora tienes %d fichas\n\n", gasto*2,fichas);
+    
+                    }
+                    if(((apuesta%2!=0)&&(suerte%2==0))||((apuesta%2==0)&&(suerte%2!=0)) ){
+                    
+                            printf("ohhh, lo siento :( no has ganado nada, te has quedado con %d fichas\n\n", fichas);    
+                }
+                    }else{
+                
+                        printf("No tienes fichas suficientes\n\n");
+    
+                    }
+                    
+                break;
+
+            case 3:
+
+                printf("Tienes %d fichas.\n\n", fichas);        
+            
+                break;
+
+    
+            case 4:
+    
+                printf("bye bye, hasta la próxima, aqui esta tu saldo: %d\n", fichas);
+    
+                break;
+    
+            default:
+                
+                    printf("tienes que elegir una opcion\n");
+    
+        }    
+
+        printf("Elija entre este menu: \n \t 1:Introducir fichas. \n \t 2:Jugar.ºn\n\t 3:¿cuantas fichas tengo? \n \t 4:Salir. \n ");
+        scanf("%d", &menu);
+
+     }
+    return 0;
+}

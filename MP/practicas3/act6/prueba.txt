@@ -1,0 +1,9 @@
+Fichero de prueba para la actividad 6.
+
+
+Esto es una prueba para ver si el fichero se lee adecuadamente
+
+
+....
+****
+

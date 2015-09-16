@@ -1,0 +1,14 @@
+#include"prototipos.h"
+
+void extraerCadena(char cadena, int n, char cadena2){
+     int i;
+     
+     for(i=0; i<n; i++){
+
+                   cadena2[i]=cadena[i];
+                    
+              }
+              i++;
+		cadena2[i]='\0';
+              
+     }

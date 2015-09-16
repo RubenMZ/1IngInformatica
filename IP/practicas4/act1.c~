@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define numeros 100
+
+int main(){
+
+int num, i, nume, numer; 
+float Vector1[numeros], Vector2[numeros];
+printf("Introduce el numero de elementos:");
+scanf("%d", &num);
+
+	for(i=0;i<num;i++){
+		printf("Escribe el elemento %d:", i+1);
+		scanf("%f", &Vector1[i]);
+	}
+
+	for(i=num-1;i>=0;i--){
+		numer=Vector1[i];
+		scanf("%f", &Vector2[numer]);
+	}
+for(i=0;i<num; i++){
+nume=Vector2[i];
+printf("El vector inverso es: %d\n", nume);
+}
+
+return 0;
+}

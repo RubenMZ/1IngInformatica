@@ -1,0 +1,37 @@
+//Programa que imprime los numeros perfectos qu ehay hasta el 10000 y 
+
+#include<stdio.h>
+
+//Prototipos
+
+int perfecto(int num);
+
+int main()
+{
+	int num, i;
+
+		for(i=1; i<=10000; i++)
+		{
+		num=i;
+		if(num==perfecto(num))
+		{
+		printf("El numero %d es perfecto.\n", num);
+		}
+		}
+return 0;
+}
+
+
+
+int perfecto(int num)
+{
+int perfecto, i;
+perfecto=0;
+	for(i=1; i<num; i++)
+	{
+		if(num%i==0){
+			perfecto=perfecto+i;
+		}
+	}
+return (perfecto);
+}
